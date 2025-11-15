@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Complete Learning Roadmap</title>
+    <style>
+        @page {
+            margin: 1.5cm;
+            size: A4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            padding: 20px;
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+        
+        .no-print {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        
+        .no-print:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                padding: 0;
+            }
+        }
+        
+        .cover {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            page-break-after: always;
+        }
+        
+        .cover h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .cover .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cover .duration {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-size: 1.1em;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            page-break-after: avoid;
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            page-break-after: avoid;
+        }
+        
+        h4 {
+            color: #555;
+            font-size: 1.2em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .checkbox-item {
+            margin: 8px 0 8px 20px;
+            padding-left: 10px;
+            position: relative;
+        }
+        
+        .checkbox-item::before {
+            content: "☐";
+            position: absolute;
+            left: -20px;
+            font-size: 1.2em;
+            color: #667eea;
+        }
+        
+        .sub-item {
+            margin-left: 40px;
+            font-size: 0.95em;
+            color: #555;
+        }
+        
+        .week-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            page-break-inside: avoid;
+        }
+        
+        .week-box h4 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        
+        .project-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .tip-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .progress-section {
+            background: #e7f3ff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+        
+        ul {
+            margin-left: 20px;
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <button class="no-print" onclick="window.print()">🖨️ Print to PDF (Ctrl+P)</button>
+    
+    <!-- COVER PAGE -->
+    <div class="cover">
+        <h1>🚀 REACT COMPLETE LEARNING ROADMAP</h1>
+        <p class="subtitle">Deep Learning Notebook with Schedule & Topic Breakdowns</p>
+        <div class="duration">
+            <strong>⏱️ Estimated Duration:</strong><br>
+            📅 1 hour/day: 60-70 days (≈2-2.5 months)<br>
+            📅 2 hours/day: 35-40 days (≈1-1.5 months)
+        </div>
+        <p style="margin-top: 30px; font-size: 0.9em;">
+            Generated: <script>document.write(new Date().toLocaleDateString())</script>
+        </p>
+    </div>
+
+    <!-- TABLE OF CONTENTS -->
+    <h2>📑 TABLE OF CONTENTS</h2>
+    <ol style="font-size: 1.1em; line-height: 2;">
+        <li>Basic Concepts</li>
+        <li>Hooks (Core of React)</li>
+        <li>Advanced React Concepts</li>
+        <li>React 18+ & Concurrent Features</li>
+        <li>State Management</li>
+        <li>Performance Optimization</li>
+        <li>Routing (React Router v6+)</li>
+        <li>Forms</li>
+        <li>Data Fetching & APIs</li>
+        <li>Styling & UI</li>
+        <li>Frameworks Built on React</li>
+        <li>Optional Advanced Topics</li>
+        <li>Learning Schedule (1-2 hrs/day)</li>
+    </ol>
+
+    <div class="page-break"></div>
+
+    <!-- SECTION 1: BASIC CONCEPTS -->
+    <h2>1️⃣ BASIC CONCEPTS</h2>
+
+    <h3>Components</h3>
+    <div class="checkbox-item">Functional Components
+        <div class="sub-item">• Arrow function components</div>
+        <div class="sub-item">• Regular function components</div>
+        <div class="sub-item">• When to use each</div>
+    </div>
+    <div class="checkbox-item">Class Components
+        <div class="sub-item">• Constructor and state</div>
+        <div class="sub-item">• Lifecycle methods</div>
+        <div class="sub-item">• When to use (legacy code)</div>
+    </div>
+    <div class="checkbox-item">Props (Data from Parent)
+        <div class="sub-item">• Passing data down</div>
+        <div class="sub-item">• Props destructuring</div>
+        <div class="sub-item">• PropTypes validation</div>
+    </div>
+    <div class="checkbox-item">State (Internal Component Data)
+        <div class="sub-item">• Local component state</div>
+        <div class="sub-item">• State updates</div>
+        <div class="sub-item">• State lifting</div>
+    </div>
+    <div class="checkbox-item">Lifecycle (Mount → Update → Unmount)
+        <div class="sub-item">• componentDidMount</div>
+        <div class="sub-item">• componentDidUpdate</div>
+        <div class="sub-item">• componentWillUnmount</div>
+    </div>
+
+    <h3>Rendering</h3>
+    <div class="checkbox-item">Virtual DOM
+        <div class="sub-item">• Concept and benefits</div>
+        <div class="sub-item">• How React uses it</div>
+        <div class="sub-item">• Performance implications</div>
+    </div>
+    <div class="checkbox-item">Diffing & Reconciliation
+        <div class="sub-item">• How React compares trees</div>
+        <div class="sub-item">• Optimization strategies</div>
+    </div>
+    <div class="checkbox-item">Conditional Rendering
+        <div class="sub-item">• if/else statements</div>
+        <div class="sub-item">• Ternary operators</div>
+        <div class="sub-item">• && operator</div>
+    </div>
+    <div class="checkbox-item">List Rendering + Keys
+        <div class="sub-item">• map() function</div>
+        <div class="sub-item">• Key importance</div>
+        <div class="sub-item">• Index as key (anti-pattern)</div>
+    </div>
+
+    <h3>JSX (JavaScript XML)</h3>
+    <div class="checkbox-item">Expressions in JSX
+        <div class="sub-item">• Embedding JavaScript</div>
+        <div class="sub-item">• Using variables</div>
+    </div>
+    <div class="checkbox-item">Fragments (&lt;&gt; &lt;/&gt;)
+        <div class="sub-item">• When to use</div>
+        <div class="sub-item">• React.Fragment syntax</div>
+    </div>
+    <div class="checkbox-item">JSX Rules
+        <div class="sub-item">• Single parent requirement</div>
+        <div class="sub-item">• Return statement</div>
+        <div class="sub-item">• className vs class</div>
+    </div>
+
+    <h3>Props & Children</h3>
+    <div class="checkbox-item">Prop Drilling
+        <div class="sub-item">• Problem understanding</div>
+        <div class="sub-item">• When it becomes an issue</div>
+    </div>
+    <div class="checkbox-item">Default Props
+        <div class="sub-item">• Setting defaults</div>
+        <div class="sub-item">• DefaultProps pattern</div>
+    </div>
+    <div class="checkbox-item">Children Prop
+        <div class="sub-item">• Accessing children</div>
+        <div class="sub-item">• Composition pattern</div>
+    </div>
+    <div class="checkbox-item">Composition Pattern
+        <div class="sub-item">• Building flexible components</div>
+        <div class="sub-item">• Slot pattern</div>
+    </div>
+
+    <h3>Refs</h3>
+    <div class="checkbox-item">useRef
+        <div class="sub-item">• DOM access</div>
+        <div class="sub-item">• Storing mutable values</div>
+    </div>
+    <div class="checkbox-item">forwardRef
+        <div class="sub-item">• Passing refs to children</div>
+        <div class="sub-item">• Use cases</div>
+    </div>
+    <div class="checkbox-item">useImperativeHandle
+        <div class="sub-item">• Customizing ref exposure</div>
+        <div class="sub-item">• Advanced patterns</div>
+    </div>
+
+    <h3>Context</h3>
+    <div class="checkbox-item">createContext()
+        <div class="sub-item">• Creating context objects</div>
+        <div class="sub-item">• Default values</div>
+    </div>
+    <div class="checkbox-item">useContext()
+        <div class="sub-item">• Consuming context</div>
+        <div class="sub-item">• Multiple contexts</div>
+    </div>
+    <div class="checkbox-item">Context Provider / Consumer
+        <div class="sub-item">• Provider pattern</div>
+        <div class="sub-item">• Consumer pattern (legacy)</div>
+    </div>
+
+    <h3>Additional Concepts</h3>
+    <div class="checkbox-item">Portals
+        <div class="sub-item">• Rendering outside DOM hierarchy</div>
+        <div class="sub-item">• Modal use cases</div>
+    </div>
+    <div class="checkbox-item">Error Boundaries
+        <div class="sub-item">• Catching errors in component tree</div>
+        <div class="sub-item">• Error fallback UI</div>
+    </div>
+    <div class="checkbox-item">Virtual DOM & Re-render Cycle
+        <div class="sub-item">• Understanding re-renders</div>
+        <div class="sub-item">• Optimization basics</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- SECTION 2: HOOKS -->
+    <h2>2️⃣ HOOKS (CORE OF REACT)</h2>
+
+    <h3>State Management Hooks</h3>
+    <div class="checkbox-item">useState
+        <div class="sub-item">• Basic state management</div>
+        <div class="sub-item">• State update patterns</div>
+        <div class="sub-item">• Functional updates</div>
+        <div class="sub-item">• Multiple state variables</div>
+    </div>
+    <div class="checkbox-item">useReducer
+        <div class="sub-item">• Complex state logic</div>
+        <div class="sub-item">• Action patterns</div>
+        <div class="sub-item">• When to use vs useState</div>
+    </div>
+
+    <h3>Effect Hooks</h3>
+    <div class="checkbox-item">useEffect
+        <div class="sub-item">• Side effects in components</div>
+        <div class="sub-item">• Dependency array</div>
+        <div class="sub-item">• Cleanup functions</div>
+        <div class="sub-item">• Common patterns</div>
+    </div>
+    <div class="checkbox-item">useLayoutEffect
+        <div class="sub-item">• Synchronous effects</div>
+        <div class="sub-item">• DOM mutations</div>
+        <div class="sub-item">• Difference from useEffect</div>
+    </div>
+    <div class="checkbox-item">useInsertionEffect
+        <div class="sub-item">• CSS-in-JS libraries</div>
+        <div class="sub-item">• Timing considerations</div>
+    </div>
+
+    <h3>Ref Hooks</h3>
+    <div class="checkbox-item">useRef
+        <div class="sub-item">• Persistent values</div>
+        <div class="sub-item">• DOM references</div>
+        <div class="sub-item">• Previous value tracking</div>
+    </div>
+    <div class="checkbox-item">useImperativeHandle
+        <div class="sub-item">• Customizing exposed refs</div>
+        <div class="sub-item">• Parent-child communication</div>
+    </div>
+    <div class="checkbox-item">useDeferredValue
+        <div class="sub-item">• Deferring non-urgent updates</div>
+        <div class="sub-item">• Performance optimization</div>
+    </div>
+
+    <h3>Transition Hooks</h3>
+    <div class="checkbox-item">useTransition
+        <div class="sub-item">• Non-blocking updates</div>
+        <div class="sub-item">• isPending state</div>
+        <div class="sub-item">• User experience improvement</div>
+    </div>
+    <div class="checkbox-item">useDeferredValue
+        <div class="sub-item">• Debouncing values</div>
+        <div class="sub-item">• Smooth UI updates</div>
+    </div>
+
+    <h3>Context Hook</h3>
+    <div class="checkbox-item">useContext
+        <div class="sub-item">• Accessing context values</div>
+        <div class="sub-item">• Multiple contexts</div>
+        <div class="sub-item">• Performance considerations</div>
+    </div>
+
+    <h3>Performance Hooks</h3>
+    <div class="checkbox-item">useMemo
+        <div class="sub-item">• Expensive calculations</div>
+        <div class="sub-item">• Memoizing values</div>
+        <div class="sub-item">• Dependency array</div>
+    </div>
+    <div class="checkbox-item">useCallback
+        <div class="sub-item">• Memoizing functions</div>
+        <div class="sub-item">• Preventing re-renders</div>
+        <div class="sub-item">• Child component optimization</div>
+    </div>
+
+    <h3>Random / Debug Hooks</h3>
+    <div class="checkbox-item">useDebugValue
+        <div class="sub-item">• Custom hook debugging</div>
+        <div class="sub-item">• DevTools integration</div>
+    </div>
+
+    <h3>React 19 Hooks</h3>
+    <div class="checkbox-item">useFormStatus
+        <div class="sub-item">• Form submission status</div>
+        <div class="sub-item">• Pending state</div>
+    </div>
+    <div class="checkbox-item">useFormState
+        <div class="sub-item">• Server actions</div>
+        <div class="sub-item">• Form state management</div>
+    </div>
+    <div class="checkbox-item">useOptimistic
+        <div class="sub-item">• Optimistic UI updates</div>
+        <div class="sub-item">• Better UX</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- SECTION 3: ADVANCED CONCEPTS -->
+    <h2>3️⃣ ADVANCED REACT CONCEPTS</h2>
+
+    <h3>Custom Hooks (Reusable Logic)</h3>
+    <div class="checkbox-item">useFetch
+        <div class="sub-item">• Data fetching abstraction</div>
+        <div class="sub-item">• Loading and error states</div>
+    </div>
+    <div class="checkbox-item">useDebounce
+        <div class="sub-item">• Input debouncing</div>
+        <div class="sub-item">• Performance optimization</div>
+    </div>
+    <div class="checkbox-item">useLocalStorage
+        <div class="sub-item">• Persistent state</div>
+        <div class="sub-item">• Browser storage</div>
+    </div>
+    <div class="checkbox-item">usePrevious
+        <div class="sub-item">• Tracking previous values</div>
+        <div class="sub-item">• Comparison logic</div>
+    </div>
+
+    <h3>Higher Order Components (HOC)</h3>
+    <div class="checkbox-item">Function that wraps another component
+        <div class="sub-item">• Props injection</div>
+        <div class="sub-item">• Cross-cutting concerns</div>
+        <div class="sub-item">• Composition over inheritance</div>
+    </div>
+
+    <h3>Render Props Pattern</h3>
+    <div class="checkbox-item">Function passed as prop to share logic
+        <div class="sub-item">• Dynamic rendering</div>
+        <div class="sub-item">• Flexible component design</div>
+    </div>
+
+    <h3>Controlled vs Uncontrolled Components</h3>
+    <div class="checkbox-item">Controlled → State managed by React
+        <div class="sub-item">• Form inputs with state</div>
+        <div class="sub-item">• Full control over values</div>
+    </div>
+    <div class="checkbox-item">Uncontrolled → State managed by DOM refs
+        <div class="sub-item">• Ref-based form handling</div>
+        <div class="sub-item">• When to use</div>
+    </div>
+
+    <h3>Error Boundaries</h3>
+    <div class="checkbox-item">componentDidCatch()
+        <div class="sub-item">• Error handling in class components</div>
+        <div class="sub-item">• Error logging</div>
+    </div>
+    <div class="checkbox-item">getDerivedStateFromError()
+        <div class="sub-item">• Fallback UI rendering</div>
+        <div class="sub-item">• Error recovery</div>
+    </div>
+
+    <h3>Code Splitting & Lazy Loading</h3>
+    <div class="checkbox-item">React.lazy()
+        <div class="sub-item">• Dynamic imports</div>
+        <div class="sub-item">• Route-based splitting</div>
+    </div>
+    <div class="checkbox-item">Suspense fallback UI
+        <div class="sub-item">• Loading states</div>
+        <div class="sub-item">• Error boundaries integration</div>
+    </div>
+
+    <h3>Compound Components Pattern</h3>
+    <div class="checkbox-item">Building component APIs</div>
+    <div class="checkbox-item">Shared state between components</div>
+
+    <div class="page-break"></div>
+
+    <!-- SECTION 4: REACT 18+ -->
+    <h2>4️⃣ REACT 18+ & CONCURRENT FEATURES</h2>
+
+    <div class="checkbox-item">Concurrent Rendering
+        <div class="sub-item">• Non-blocking rendering</div>
+        <div class="sub-item">• Interruptible updates</div>
+    </div>
+    <div class="checkbox-item">useTransition ✅
+        <div class="sub-item">• Already covered in hooks</div>
+    </div>
+    <div class="checkbox-item">useDeferredValue ✅
+        <div class="sub-item">• Already covered in hooks</div>
+    </div>
+    <div class="checkbox-item">Suspense for Data Fetching
+        <div class="sub-item">• Async component loading</div>
+        <div class="sub-item">• React Query integration</div>
+    </div>
+    <div class="checkbox-item">Server Components (React 18+)
+        <div class="sub-item">• Server-side rendering</div>
+        <div class="sub-item">• Zero bundle size components</div>
+    </div>
+
+    <!-- SECTION 5: STATE MANAGEMENT -->
+    <h2>5️⃣ STATE MANAGEMENT</h2>
+
+    <h3>Context API ✅</h3>
+    <div class="checkbox-item">Review context patterns</div>
+    <div class="checkbox-item">Performance optimization</div>
+
+    <h3>Redux Toolkit (RTK)</h3>
+    <div class="checkbox-item">createSlice()
+        <div class="sub-item">• Reducer + actions together</div>
+        <div class="sub-item">• Immer integration</div>
+    </div>
+    <div class="checkbox-item">configureStore()
+        <div class="sub-item">• Store setup</div>
+        <div class="sub-item">• Middleware configuration</div>
+    </div>
+    <div class="checkbox-item">useSelector / useDispatch
+        <div class="sub-item">• Accessing state</div>
+        <div class="sub-item">• Dispatching actions</div>
+    </div>
+    <div class="checkbox-item">RTK Query (API Fetching)
+        <div class="sub-item">• Automatic caching</div>
+        <div class="sub-item">• Data synchronization</div>
+    </div>
+
+    <h3>Alternative State Libraries</h3>
+    <div class="checkbox-item">Zustand (Simple Store)
+        <div class="sub-item">• Minimal boilerplate</div>
+        <div class="sub-item">• React hooks integration</div>
+    </div>
+    <div class="checkbox-item">Recoil (Atom-based State)
+        <div class="sub-item">• Atomic state management</div>
+        <div class="sub-item">• Selector patterns</div>
+    </div>
+    <div class="checkbox-item">Jotai (Primitive Atoms)
+        <div class="sub-item">• Bottom-up approach</div>
+        <div class="sub-item">• Minimal API</div>
+    </div>
+
+    <h3>React Query (TanStack)</h3>
+    <div class="checkbox-item">Server State
+        <div class="sub-item">• Separating server/client state</div>
+    </div>
+    <div class="checkbox-item">Caching
+        <div class="sub-item">• Automatic cache management</div>
+    </div>
+    <div class="checkbox-item">Pagination
+        <div class="sub-item">• Infinite queries</div>
+    </div>
+    <div class="checkbox-item">Background Refetching
+        <div class="sub-item">• Stale-while-revalidate</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- SECTION 6: PERFORMANCE -->
+    <h2>6️⃣ PERFORMANCE OPTIMIZATION</h2>
+
+    <h3>Memoization Techniques</h3>
+    <div class="checkbox-item">React.memo
+        <div class="sub-item">• Component memoization</div>
+        <div class="sub-item">• Props comparison</div>
+    </div>
+    <div class="checkbox-item">useMemo
+        <div class="sub-item">• Value memoization</div>
+        <div class="sub-item">• Expensive calculations</div>
+    </div>
+    <div class="checkbox-item">useCallback
+        <div class="sub-item">• Function memoization</div>
+        <div class="sub-item">• Child optimization</div>
+    </div>
+
+    <h3>Additional Optimization</h3>
+    <div class="checkbox-item">Avoid Unnecessary Re-renders
+        <div class="sub-item">• Component structure</div>
+        <div class="sub-item">• State colocation</div>
+    </div>
+    <div class="checkbox-item">Profiling with React DevTools
+        <div class="sub-item">• Performance profiler</div>
+        <div class="sub-item">• Identifying bottlenecks</div>
+    </div>
+    <div class="checkbox-item">Virtualization
+        <div class="sub-item">• react-window</div>
+        <div class="sub-item">• react-virtualized</div>
+        <div class="sub-item">• Large lists optimization</div>
+    </div>
+
+    <!-- SECTION 7: ROUTING -->
+    <h2>7️⃣ ROUTING (REACT ROUTER V6+)</h2>
+
+    <div class="checkbox-item">Nested Routes
+        <div class="sub-item">• Layout routes</div>
+        <div class="sub-item">• Child route rendering</div>
+    </div>
+    <div class="checkbox-item">Dynamic Routes
+        <div class="sub-item">• URL parameters</div>
+        <div class="sub-item">• Route matching</div>
+    </div>
+    <div class="checkbox-item">Protected Routes
+        <div class="sub-item">• Authentication guards</div>
+        <div class="sub-item">• Redirect patterns</div>
+    </div>
+    <div class="checkbox-item">Data API (loader / action)
+        <div class="sub-item">• Data loading</div>
+        <div class="sub-item">• Form submissions</div>
+    </div>
+    <div class="checkbox-item">Navigation Hooks
+        <div class="sub-item">• useNavigate (programmatic navigation)</div>
+        <div class="sub-item">• useParams (URL parameters)</div>
+        <div class="sub-item">• useLocation (current location)</div>
+    </div>
+    <div class="checkbox-item">Outlet & Layout Routes
+        <div class="sub-item">• Layout composition</div>
+        <div class="sub-item">• Shared layouts</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- SECTION 8: FORMS -->
+    <h2>8️⃣ FORMS</h2>
+
+    <h3>Libraries</h3>
+    <div class="checkbox-item">React Hook Form
+        <div class="sub-item">• Minimal re-renders</div>
+        <div class="sub-item">• Better performance</div>
+    </div>
+    <div class="checkbox-item">Formik
+        <div class="sub-item">• More features</div>
+        <div class="sub-item">• Complex forms</div>
+    </div>
+
+    <h3>Form Patterns</h3>
+    <div class="checkbox-item">Controlled vs Uncontrolled Inputs
+        <div class="sub-item">• State management</div>
+        <div class="sub-item">• Ref-based handling</div>
+    </div>
+
+    <h3>Validation</h3>
+    <div class="checkbox-item">Yup
+        <div class="sub-item">• Schema validation</div>
+        <div class="sub-item">• Error messages</div>
+    </div>
+    <div class="checkbox-item">Zod
+        <div class="sub-item">• TypeScript-first</div>
+        <div class="sub-item">• Type inference</div>
+    </div>
+
+    <h3>React 19 Features</h3>
+    <div class="checkbox-item">useFormState / useFormStatus
+        <div class="sub-item">• Server actions</div>
+        <div class="sub-item">• Form state management</div>
+    </div>
+
+    <!-- SECTION 9: DATA FETCHING -->
+    <h2>9️⃣ DATA FETCHING & APIs</h2>
+
+    <div class="checkbox-item">fetch / axios
+        <div class="sub-item">• HTTP requests</div>
+        <div class="sub-item">• Request configuration</div>
+    </div>
+    <div class="checkbox-item">Async-Await & Error Handling
+        <div class="sub-item">• Try-catch patterns</div>
+        <div class="sub-item">• Error states</div>
+    </div>
+    <div class="checkbox-item">Caching / Pagination
+        <div class="sub-item">• Client-side caching</div>
+        <div class="sub-item">• Cursor/offset pagination</div>
+    </div>
+    <div class="checkbox-item">React Query / RTK Query
+        <div class="sub-item">• Automatic management</div>
+        <div class="sub-item">• Optimistic updates</div>
+    </div>
+    <div class="checkbox-item">GraphQL (Apollo / urql)
+        <div class="sub-item">• Query language</div>
+        <div class="sub-item">• Client libraries</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- SECTION 10: STYLING -->
+    <h2>🔟 STYLING & UI</h2>
+
+    <div class="checkbox-item">CSS Modules
+        <div class="sub-item">• Scoped styles</div>
+        <div class="sub-item">• Naming conventions</div>
+    </div>
+    <div class="checkbox-item">Styled Components
+        <div class="sub-item">• CSS-in-JS</div>
+        <div class="sub-item">• Dynamic styling</div>
+    </div>
+    <div class="checkbox-item">Emotion
+        <div class="sub-item">• CSS-in-JS alternative</div>
+        <div class="sub-item">• Performance focused</div>
+    </div>
+    <div class="checkbox-item">Tailwind CSS
+        <div class="sub-item">• Utility-first CSS</div>
+        <div class="sub-item">• Rapid development</div>
+    </div>
+
+    <h3>UI Libraries</h3>
+    <div class="checkbox-item">Material UI
+        <div class="sub-item">• Component library</div>
+        <div class="sub-item">• Theming</div>
+    </div>
+    <div class="checkbox-item">Chakra UI
+        <div class="sub-item">• Accessible components</div>
+        <div class="sub-item">• Design system</div>
+    </div>
+    <div class="checkbox-item">Ant Design
+        <div class="sub-item">• Enterprise UI</div>
+        <div class="sub-item">• Rich components</div>
+    </div>
+
+    <!-- SECTION 11: FRAMEWORKS -->
+    <h2>13️⃣ FRAMEWORKS BUILT ON REACT</h2>
+
+    <h3>Next.js</h3>
+    <div class="checkbox-item">File-based Routing
+        <div class="sub-item">• App router</div>
+        <div class="sub-item">• Pages router</div>
+    </div>
+    <div class="checkbox-item">SSR / SSG / ISR
+        <div class="sub-item">• Server-side rendering</div>
+        <div class="sub-item">• Static generation</div>
+        <div class="sub-item">• Incremental regeneration</div>
+    </div>
+    <div class="checkbox-item">API Routes
+        <div class="sub-item">• Backend endpoints</div>
+        <div class="sub-item">• Serverless functions</div>
+    </div>
+    <div class="checkbox-item">Middleware
+        <div class="sub-item">• Request interception</div>
+        <div class="sub-item">• Edge runtime</div>
+    </div>
+    <div class="checkbox-item">Server Actions (React 19)
+        <div class="sub-item">• Form handling</div>
+        <div class="sub-item">• Data mutations</div>
+    </div>
+    <div class="checkbox-item">next/navigation Hooks
+        <div class="sub-item">• useRouter</div>
+        <div class="sub-item">• usePathname</div>
+        <div class="sub-item">• useSearchParams</div>
+    </div>
+
+    <h3>Remix</h3>
+    <div class="checkbox-item">Nested Routes
+        <div class="sub-item">• Layout inheritance</div>
+    </div>
+    <div class="checkbox-item">Data Loading / Actions
+        <div class="sub-item">• Loader functions</div>
+        <div class="sub-item">• Action functions</div>
+    </div>
+    <div class="checkbox-item">Progressive Enhancement
+        <div class="sub-item">• Works without JS</div>
+        <div class="sub-item">• Enhanced with JS</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- SECTION 12: OPTIONAL ADVANCED -->
+    <h2>14️⃣ OPTIONAL ADVANCED TOPICS</h2>
+
+    <div class="checkbox-item">WebSockets (Realtime Data)
+        <div class="sub-item">• Socket.io integration</div>
+        <div class="sub-item">• Live updates</div>
+    </div>
+    <div class="checkbox-item">PWA with React
+        <div class="sub-item">• Service workers</div>
+        <div class="sub-item">• Offline functionality</div>
+    </div>
+    <div class="checkbox-item">Authentication (JWT / Firebase)
+        <div class="sub-item">• Login/logout flows</div>
+        <div class="sub-item">• Protected routes</div>
+    </div>
+    <div class="checkbox-item">File Uploads
+        <div class="sub-item">• Multipart forms</div>
+        <div class="sub-item">• Progress tracking</div>
+    </div>
+    <div class="checkbox-item">Accessibility (ARIA)
+        <div class="sub-item">• Screen readers</div>
+        <div class="sub-item">• Keyboard navigation</div>
+    </div>
+    <div class="checkbox-item">Internationalization (i18n)
+        <div class="sub-item">• Multiple languages</div>
+        <div class="sub-item">• react-i18next</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- LEARNING SCHEDULE -->
+    <h2>📅 ESTIMATED LEARNING SCHEDULE (1-2 HRS/DAY)</h2>
+
+    <div class="tip-box">
+        <strong>🎯 Total Duration:</strong><br>
+        • 1 hour/day: ~60-70 days (≈2-2.5 months)<br>
+        • 2 hours/day: ~35-40 days (≈1-1.5 months)
+    </div>
+
+    <h3>Week-by-Week Breakdown:</h3>
+
+    <div class="week-box">
+        <h4>Week 1: Fundamentals</h4>
+        <strong>Focus:</strong> JSX, Components, Props, State<br>
+        <strong>Topics:</strong> Setup (Vite/CRA), Functional components, Props passing, State basics<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> Counter App
+        </div>
+        <div class="checkbox-item">Day 1-2: Setup + JSX basics</div>
+        <div class="checkbox-item">Day 3-4: Components & Props</div>
+        <div class="checkbox-item">Day 5-7: State & Event Handling</div>
+    </div>
+
+    <div class="week-box">
+        <h4>Week 2: Rendering + Lifecycle</h4>
+        <strong>Focus:</strong> Virtual DOM, Keys, Conditional Rendering<br>
+        <strong>Topics:</strong> List rendering, Keys importance, Conditional rendering patterns<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> Todo App
+        </div>
+        <div class="checkbox-item">Day 1-2: Virtual DOM concepts</div>
+        <div class="checkbox-item">Day 3-4: Lists & Keys</div>
+        <div class="checkbox-item">Day 5-7: Conditional rendering + Todo App</div>
+    </div>
+
+    <div class="week-box">
+        <h4>Week 3: Core Hooks</h4>
+        <strong>Focus:</strong> useState, useEffect, useRef<br>
+        <strong>Topics:</strong> State management, Side effects, DOM refs<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> Weather App
+        </div>
+        <div class="checkbox-item">Day 1-2: useState deep dive</div>
+        <div class="checkbox-item">Day 3-4: useEffect patterns</div>
+        <div class="checkbox-item">Day 5-7: useRef + Weather App</div>
+    </div>
+
+    <div class="week-box">
+        <h4>Week 4: Context & Refs</h4>
+        <strong>Focus:</strong> createContext, useContext, forwardRef<br>
+        <strong>Topics:</strong> Global state, Context API, Ref forwarding<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> Notes App
+        </div>
+        <div class="checkbox-item">Day 1-3: Context API</div>
+        <div class="checkbox-item">Day 4-5: forwardRef patterns</div>
+        <div class="checkbox-item">Day 6-7: Build Notes App</div>
+    </div>
+
+    <div class="week-box">
+        <h4>Week 5: Advanced Hooks</h4>
+        <strong>Focus:</strong> useReducer, useMemo, useCallback<br>
+        <strong>Topics:</strong> Complex state, Memoization, Performance<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> Dashboard Widget
+        </div>
+        <div class="checkbox-item">Day 1-3: useReducer patterns</div>
+        <div class="checkbox-item">Day 4-5: useMemo & useCallback</div>
+        <div class="checkbox-item">Day 6-7: Dashboard with optimization</div>
+    </div>
+
+    <div class="week-box">
+        <h4>Week 6: Custom Hooks + Patterns</h4>
+        <strong>Focus:</strong> useFetch, HOC, Render Props<br>
+        <strong>Topics:</strong> Reusable logic, Component patterns<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> API Dashboard
+        </div>
+        <div class="checkbox-item">Day 1-3: Custom hooks</div>
+        <div class="checkbox-item">Day 4-5: HOC & Render Props</div>
+        <div class="checkbox-item">Day 6-7: API Dashboard</div>
+    </div>
+
+    <div class="week-box">
+        <h4>Week 7: Lazy Loading & Compound Components</h4>
+        <strong>Focus:</strong> Suspense, React.lazy, Compound Components<br>
+        <strong>Topics:</strong> Code splitting, Advanced patterns<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> Portfolio App
+        </div>
+        <div class="checkbox-item">Day 1-3: Lazy loading</div>
+        <div class="checkbox-item">Day 4-5: Compound components</div>
+        <div class="checkbox-item">Day 6-7: Portfolio with lazy loading</div>
+    </div>
+
+    <div class="week-box">
+        <h4>Week 8: React 18+ Features</h4>
+        <strong>Focus:</strong> useTransition, useDeferredValue, Server Components<br>
+        <strong>Topics:</strong> Concurrent rendering, Performance<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> Real-time Feed
+        </div>
+        <div class="checkbox-item">Day 1-3: useTransition</div>
+        <div class="checkbox-item">Day 4-5: useDeferredValue</div>
+        <div class="checkbox-item">Day 6-7: Real-time feed app</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <div class="week-box">
+        <h4>Week 9: State Management</h4>
+        <strong>Focus:</strong> Redux Toolkit, React Query<br>
+        <strong>Topics:</strong> Global state, Server state, Caching<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> CRUD App
+        </div>
+        <div class="checkbox-item">Day 1-4: Redux Toolkit</div>
+        <div class="checkbox-item">Day 5-7: React Query + CRUD App</div>
+    </div>
+
+    <div class="week-box">
+        <h4>Week 10: Routing</h4>
+        <strong>Focus:</strong> React Router v6, Nested & Protected Routes<br>
+        <strong>Topics:</strong> Navigation, Route protection, Data API<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> Multi-page App
+        </div>
+        <div class="checkbox-item">Day 1-3: Basic routing</div>
+        <div class="checkbox-item">Day 4-5: Nested & protected routes</div>
+        <div class="checkbox-item">Day 6-7: Multi-page app</div>
+    </div>
+
+    <div class="week-box">
+        <h4>Week 11: Forms & Validation</h4>
+        <strong>Focus:</strong> React Hook Form / Formik, Yup/Zod<br>
+        <strong>Topics:</strong> Form handling, Validation schemas<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> Login/Signup Form
+        </div>
+        <div class="checkbox-item">Day 1-3: React Hook Form</div>
+        <div class="checkbox-item">Day 4-5: Validation</div>
+        <div class="checkbox-item">Day 6-7: Complete auth forms</div>
+    </div>
+
+    <div class="week-box">
+        <h4>Week 12: Data Fetching & APIs</h4>
+        <strong>Focus:</strong> fetch/axios, GraphQL, Pagination<br>
+        <strong>Topics:</strong> HTTP requests, Error handling, Caching<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> API Dashboard
+        </div>
+        <div class="checkbox-item">Day 1-3: fetch/axios patterns</div>
+        <div class="checkbox-item">Day 4-5: Error handling & caching</div>
+        <div class="checkbox-item">Day 6-7: GraphQL basics</div>
+    </div>
+
+    <div class="week-box">
+        <h4>Week 13: Styling & UI</h4>
+        <strong>Focus:</strong> Tailwind CSS, MUI, Chakra UI<br>
+        <strong>Topics:</strong> Utility CSS, Component libraries<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> Styled Portfolio
+        </div>
+        <div class="checkbox-item">Day 1-3: Tailwind CSS</div>
+        <div class="checkbox-item">Day 4-5: Component library (MUI/Chakra)</div>
+        <div class="checkbox-item">Day 6-7: Redesign portfolio</div>
+    </div>
+
+    <div class="week-box">
+        <h4>Week 14: Frameworks</h4>
+        <strong>Focus:</strong> Next.js SSR/SSG, API Routes, Remix Routing<br>
+        <strong>Topics:</strong> Full-stack React, Server components<br>
+        <div class="project-box">
+            <strong>🎨 Mini Project:</strong> Deployable App
+        </div>
+        <div class="checkbox-item">Day 1-4: Next.js fundamentals</div>
+        <div class="checkbox-item">Day 5-6: API routes</div>
+        <div class="checkbox-item">Day 7: Deploy to Vercel</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- LEARNING TIPS -->
+    <h2>🎯 LEARNING TIPS & BEST PRACTICES</h2>
+
+    <div class="tip-box">
+        <h4>✅ Building Projects</h4>
+        <ul>
+            <li>Build one mini project after each major section</li>
+            <li>Don't just follow tutorials - build from scratch</li>
+            <li>Refactor old projects with new techniques every 2 weeks</li>
+            <li>After 3 months, create a complete portfolio project</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        <h4>📚 Study Strategies</h4>
+        <ul>
+            <li>Practice 15-20 mins daily reading official React docs</li>
+            <li>Use interactive platforms (CodeSandbox, React.dev playground)</li>
+            <li>Alternate between theory & practice daily</li>
+            <li>Join React communities (Discord, Reddit, Dev.to)</li>
+        </ul>
+    </div>
+
+    <div class="tip-box">
+        <h4>🚀 After Completion</h4>
+        <ul>
+            <li>Build a complete full-stack portfolio project</li>
+            <li>Contribute to open-source React projects</li>
+            <li>Explore TypeScript with React</li>
+            <li>Learn testing (Jest, React Testing Library)</li>
+            <li>Study deployment & DevOps strategies</li>
+            <li>Keep up with React updates and new features</li>
+        </ul>
+    </div>
+
+    <!-- PROGRESS TRACKING -->
+    <h2>📊 PROGRESS TRACKING</h2>
+
+    <div class="progress-section">
+        <h3>Phase 1: Fundamentals (Week 1-4)</h3>
+        <div class="checkbox-item">Completed all basic concepts</div>
+        <div class="checkbox-item">Built 4 mini projects</div>
+        <div class="checkbox-item">Understood component lifecycle</div>
+    </div>
+
+    <div class="progress-section">
+        <h3>Phase 2: Hooks & Advanced (Week 5-8)</h3>
+        <div class="checkbox-item">Mastered all hooks</div>
+        <div class="checkbox-item">Created custom hooks</div>
+        <div class="checkbox-item">Understood advanced patterns</div>
+    </div>
+
+    <div class="progress-section">
+        <h3>Phase 3: State & Routing (Week 9-10)</h3>
+        <div class="checkbox-item">Redux Toolkit proficiency</div>
+        <div class="checkbox-item">React Query understanding</div>
+        <div class="checkbox-item">Routing mastery</div>
+    </div>
+
+    <div class="progress-section">
+        <h3>Phase 4: Forms & APIs (Week 11-12)</h3>
+        <div class="checkbox-item">Form libraries expertise</div>
+        <div class="checkbox-item">API integration skills</div>
+        <div class="checkbox-item">Error handling patterns</div>
+    </div>
+
+    <div class="progress-section">
+        <h3>Phase 5: Styling (Week 13)</h3>
+        <div class="checkbox-item">Tailwind CSS proficiency</div>
+        <div class="checkbox-item">UI library experience</div>
+    </div>
+
+    <div class="progress-section">
+        <h3>Phase 6: Frameworks (Week 14)</h3>
+        <div class="checkbox-item">Next.js fundamentals</div>
+        <div class="checkbox-item">Deployment experience</div>
+        <div class="checkbox-item">Full-stack capability</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- FOOTER -->
+    <div style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px; margin-top: 30px;">
+        <h2>🎉 Congratulations on Starting Your React Journey!</h2>
+        <p style="font-size: 1.1em; margin-top: 15px;">
+            Remember: Consistency is key. Practice daily, build projects, and don't give up!
+        </p>
+        <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.9;">
+            Generated by React Learning Roadmap Generator<br>
+            <script>document.write(new Date().toLocaleDateString())</script>
+        </p>
+    </div>
+
+</body>
+</html>
